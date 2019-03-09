@@ -1,0 +1,47 @@
+<form #searchForm>
+  <div class="form-group" style="margin-top:1em;">
+    <label for="estado" style="display:inline-block;width:5em;">Estado</label>
+    <!-- <input #estadoInput type="text" class="form-control" id="estado"> -->
+    <select #estadoInput class="form-control">
+      <option value="-1" selected="selected"></option>
+      <option value="1">Launch is GO</option>
+      <option value="2">Launch is NO-GO</option>
+      <option value="3">Launch was a success</option>
+      <option value="4">Launch failed</option>
+      <option value="5">Unplanned hold</option>
+      <option value="6">Vehicle is in flight</option>
+      <option value="7">There was a partial failure during launch</option>
+    </select>
+  </div>
+
+  <div class="form-group" style="margin-top:1em;">
+    <label for="agencia" style="display:inline-block;width:5em;">Agencia</label>
+    <input #agenciaInput type="text" class="form-control" id="agencia">
+  </div>
+
+  <div class="form-group" style="margin-top:1em;">
+    <label for="tipo" style="display:inline-block;width:5em;">Tipo</label>
+    <select #tipoInput class="form-control">
+      <option value="-1" selected="selected"></option>
+      <option value="1">Earth Science</option>
+      <option value="2">Planetary Science</option>
+      <option value="3">Astrophysics</option>
+      <option value="4">Heliophysics</option>
+      <option value="5">Human Exploration</option>
+      <option value="6">Robotic Exploration</option>
+      <option value="7">Government/Top Secret</option>
+      <option value="8">Tourism</option>
+      <option value="9">Unknown</option>
+      <option value="10">Communications</option>
+      <option value="11">Resupply</option>
+      <option value="12">Suborbital</option>
+      <option value="13">Test Flight</option>
+      <option value="14">Dedicated Rideshare</option>
+      <option value="15">Navigation</option>
+    </select>
+  </div>
+
+  <input type="button" style="margin-left:10em;margin-top:3em;" value="Buscar" (click)="searchFilters.next(
+      {estado:estadoInput.value, agencia:agenciaInput.value, tipo:tipoInput.value})">
+
+</form>

@@ -1,8 +1,15 @@
 <h1>Angular Speed: aplicaciones de alto rendimiento</h1>
+<h2>Ejercicio 1</h2>
+
+<app-search-form (searchFilters)="onSearch($event)"></app-search-form>
+
+<app-result-list 
+  [launchesResult]="filteredLaunches">
+</app-result-list>
 
 <router-outlet></router-outlet>
 
-<footer>
+<footer style="margin-top:3em;border-top: 2px solid grey;padding:1em;clear:both;">
   <a href="https://trainingit.es/">Training IT</a>
   <small>A course By <a href="https://twitter.com/albertobasalo">Alberto Basalo</a></small>
 </footer>

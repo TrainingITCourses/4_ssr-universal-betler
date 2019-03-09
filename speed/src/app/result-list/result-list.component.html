@@ -1,0 +1,15 @@
+<div *ngFor="let launch of launchesResult" style="border:3px solid burlywood;margin:1em;padding:0.5em; width:45%; float:left;">
+  <div><span style="font-weight: bold">{{ launch.name }}</span></div>
+  <div><small>{{ launch.windowstart }} - {{ launch.windowend }}</small></div>
+  <div><i>Type:</i> {{ getMissionTypeDescription(launch) }}</div>
+  <div><i>Launch location:</i> <a href="{{ launch.location.pads[0].mapURL}}">{{ launch.location.name }}</a></div>
+  <div><i>PAD Agency:</i> {{ getPADAgency(launch) }}
+  <div><i>Rocket Agency:</i> {{ getRocketAgency(launch) }}</div>
+  <div><i>Mission Agency:</i>{{ getMissionAgency(launch) }}</div>
+  <div><i>Rocket type: </i> 
+    <a href="{{ launch.rocket.wikiURL }}">
+      {{ launch.rocket.familyname }} / {{ launch.rocket.name }} - {{ launch.rocket.configuration }}
+    </a>
+  </div>
+  <div style="text-align:right;">{{ getStatusDescription(launch.status) }}</div>
+</div>
